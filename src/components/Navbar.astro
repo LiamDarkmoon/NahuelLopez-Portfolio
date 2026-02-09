@@ -1,0 +1,14 @@
+---
+import ThemeSwitch from '../components/ThemeSwitch.tsx'
+import Hamburger from '../components/Hamburger.tsx'
+---
+
+<header class="md:col-start-2 col-span-1 flex justify-center items-center bg-transparent">
+    <nav class="flex items-center justify-between w-full p-3">
+        <Hamburger client:only/>
+        <div class="shrink-0">
+            <a href="/" class="block sm:hidden text-xl">Nahuel Lopez</a>
+        </div>
+        <ThemeSwitch client:load/>
+    </nav>
+</div>
