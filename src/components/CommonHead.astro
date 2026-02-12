@@ -49,6 +49,15 @@ const enUrl = `${origin}/en${basePath}`;
 
     <script>
       (function () {
+        if (window.location.pathname === '/') {
+          const lang = navigator.language.startsWith('en') ? 'en' : 'es';
+          window.location.replace(`/${lang}`);
+        }
+      })();
+    </script>
+
+    <script>
+      (function () {
         const theme = localStorage.getItem('theme') || 'dark';
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
