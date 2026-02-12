@@ -1,14 +1,18 @@
 ---
 import ThemeSwitch from '../components/ThemeSwitch.tsx'
+import LanSwitch from '../components/LanSwitch.tsx'
 import Hamburger from '../components/Hamburger.tsx'
 ---
 
-<header class="md:col-start-2 col-span-1 flex justify-center items-center bg-transparent">
-    <nav class="flex items-center justify-between w-full p-3">
+<header class="absolute w-full md:col-start-2 top-0 flex justify-center items-center bg-light-bg/30 dark:bg-dark-bg/30 md:bg-transparent z-50">
+    <nav class="flex items-center justify-between w-full p-3 bg-transparent">
         <Hamburger client:only/>
         <div class="shrink-0">
             <a href="/" class="block sm:hidden text-xl">Nahuel Lopez</a>
         </div>
-        <ThemeSwitch client:load/>
+        <div class="flex items-center gap-2">
+            <LanSwitch client:load/>
+            <ThemeSwitch client:load/>
+        </div>
     </nav>
 </div>

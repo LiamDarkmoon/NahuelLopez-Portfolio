@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ThemeSwitch() {
   const [isDark, setIsDark] = useState(true);
+
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme !== "dark") {
+      setIsDark(false);
+    }
+  }, []);
+
   const switchTheme = () => {
     const html = document.documentElement;
     const darkMode = html.classList.contains("dark");
