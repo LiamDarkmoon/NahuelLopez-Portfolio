@@ -1,0 +1,23 @@
+---
+import Hero from '@/components/Hero.astro';
+import Layout from '@/layouts/Layout.astro';
+import { getLangPaths } from '@/lib/langs.ts';
+import { dictionaries } from "@/lib/i18n.ts";
+import { navigate } from "astro:transitions/client"
+
+export async function getStaticPaths() {
+  return getLangPaths();
+}
+
+const { pathname } = Astro.url;
+const { lang } = Astro.params;
+const lan = dictionaries[lang];
+
+if (pathname === '/'){
+  navigate(`/es`)
+}
+---
+
+<Layout lang={lang} lan={lan}>
+	<Hero lan={lan}/>
+</Layout>

@@ -1,24 +1,35 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import { projects } from '@/lib/data.ts'
 import BadgeGroup from '@/components/BadgeGroup';
+import { LANGS } from '@/lib/langs';
+import { projects } from '@/lib/data';
+import { dictionaries } from "@/lib/i18n.ts";
 
 export function getStaticPaths() {
-
-  return projects.map(project => ({
-    params: { name: project.name },
-    props: { project }
-  }));
+  return LANGS.flatMap((lang) =>
+    projects.map((project) => ({
+      params: {
+        lang,
+        name: project.slug,
+      },
+      props: {
+        project,
+      },
+    }))
+  );
 }
 
+const { lang } = Astro.params;
+const lan = dictionaries[lang];
 const { project } = Astro.props;
+console.log(project.name);
 ---
 
-<Layout>
+<Layout lan={lan}>
   <section class="w-full flex flex-col gap-6">
 
     <h1 class="text-3xl font-bold pb-3 flex flex-wrap gap-3 items-centerjustify-between mb-6 border-b border-light-border dark:border-dark-border">
-      {project.name + " project </>"}
+      {project.name + " </>"}
       <BadgeGroup { ...project.stack }/>
     </h1>  
 

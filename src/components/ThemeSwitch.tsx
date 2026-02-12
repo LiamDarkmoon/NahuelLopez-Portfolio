@@ -1,36 +1,43 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Children } from "react";
 
-export default function ThemeSwitch() {
-  const [isDark, setIsDark] = useState(true);
+export default function ThemeSwitch({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const [isDark, setIsDark] = useState(false);
+  const html = document.documentElement;
+  const darkMode = html.classList.contains("dark");
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
-    if (theme !== "dark") {
-      setIsDark(false);
+    if (theme === "dark") {
+      setIsDark(true);
     }
   }, []);
 
-  const switchTheme = () => {
+  useEffect(() => {
     const html = document.documentElement;
-    const darkMode = html.classList.contains("dark");
 
-    if (darkMode) {
-      html.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDark(false);
-    } else {
+    if (isDark) {
       html.classList.add("dark");
       localStorage.setItem("theme", "dark");
-      setIsDark(true);
+    } else {
+      html.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
+  }, [isDark]);
+
+  const switchTheme = () => {
+    setIsDark((prev) => !prev);
   };
 
   return (
     <button
       onClick={() => switchTheme()}
-      className="px-3 py-2 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:text-brand transition"
+      className="px-3 py-2 md:w-[106px] h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:text-brand transition"
     >
-      <span className="hidden md:block float-start me-2">Theme</span>
+      <span className="hidden md:block float-start me-2">{children}</span>
       {isDark ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

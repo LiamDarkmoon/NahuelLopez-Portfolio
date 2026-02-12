@@ -1,34 +1,23 @@
 ---
-import { ClientRouter } from "astro:transitions";
-
 import IconsSprite from '../assets/icons.tsx'
 import Main from "./Main.astro";
 import Navbar from "../components/Navbar.astro";
 import Sidebar from "../components/Sidebar.astro";
+import CommonHead from '@/components/CommonHead.astro';
+
+const { lang, lan } = Astro.props
 ---
 
-<script>
-	const theme = localStorage.getItem('theme') || 'dark';
-	const html = document.documentElement;
-	html.classList.add(theme);
-</script>
+
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Nahuel Lopez - Portfolio</title>
-
-		<ClientRouter/>
-	</head>
+<html lang={lang}>
+	<CommonHead/>
 	<body class=" text-light-text-primary dark:text-dark-text-primary">
 		<IconsSprite/>
-		<Navbar/>
-		<Sidebar/>
-		<Main>
+		<Navbar {lan}/>
+		<Sidebar {lan}/>
+		<Main {lan}>
 			<slot />
 		</Main>
 	</body>

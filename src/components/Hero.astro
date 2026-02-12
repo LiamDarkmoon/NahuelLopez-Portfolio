@@ -1,0 +1,21 @@
+---
+import CardGroup from './CardGroup.astro'
+
+const { lan } = Astro.props
+---
+
+	<section class="w-full">
+		<article class="pb-12">
+			<div class="flex flex-col mb-4">
+				<h3 class="text-xl font-bold text-start text-opacity-60">{lan.hero.top}</h3>
+				<h1 class="text-5xl font-bold text-start mb-2">{lan.hero.title}</h1>
+				<h2 class="text-3xl font-bold text-start text-opacity-75">{lan.hero.subtitle}</h2>
+			</div>
+			<p class="py-2 break-words text-secundary-text">{lan.hero.description}</p>
+			<div class="py-2 mt-8 flex items-center">
+				<button class="rounded-lg h-12 w-[170px] px-6 py-3 text-dark-text-primary bg-brand hover:bg-brand-hover active:bg-brand-active">{lan.hero.button}</button>
+			</div>
+		</article>
+	</section>
+
+	<CardGroup hero {lan}/>

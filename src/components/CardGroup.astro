@@ -1,13 +1,14 @@
 ---
-import ProjectCard from '../components/ProyectCard'
+import ProjectCard from './ProjectCard.tsx'
 import { projects } from '../lib/data.ts'
 
-const { hero } = Astro.props
+const { hero, lan } = Astro.props
+const { lang } = Astro.params
 ---
 
-<section class="flex flex-col gap-6 pb-10">
+<section class="flex flex-col gap-6 pb-10" transition:name="cards">
 	<h2 class="text-3xl font-bold pb-3 border-b border-light-borded dark:border-dark-border">{ hero ? "Last projects </>" : "Projects </>" }</h2>
 	{ projects.map((p, i) => (
-  	<ProjectCard project={p} client:load/>
+  	<ProjectCard project={p} lang={lan} client:load/>
 	))}
 </section>

@@ -1,0 +1,58 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+const { title, description } = Astro.props;
+
+const url = Astro.url; 
+const pathname = url.pathname; 
+const origin = url.origin;
+
+// canonical dinámico real
+const canonical = origin + pathname;
+
+// idioma actual
+const lang = pathname.split("/")[1] || "es";
+
+// path sin idioma
+const basePath = pathname.replace(`/${lang}`, "");
+
+// alternates
+const esUrl = `${origin}/es${basePath}`;
+const enUrl = `${origin}/en${basePath}`;
+---
+
+<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content="Nahuel Lopez — Web & UX Designer" />
+    <meta property="og:description" content="Diseño interfaces, experiencias y sistemas digitales con foco en usabilidad y performance." />
+    <meta property="og:image" content="..." />
+    <meta property="og:url" content="https://Nahuel-lopez.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="robots" content="index, follow">
+
+    
+    <link rel="canonical" href={canonical} />
+    
+    <link rel="alternate" hreflang="es" href={esUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={esUrl} />
+    
+		<link rel="icon" type="image/svg+xml" href="/favi.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ?? "Nahuel Lopez – Portfolio"}</title>
+
+
+		<ClientRouter/>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+</head>

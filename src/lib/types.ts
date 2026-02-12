@@ -12,6 +12,7 @@ export type Stack = {
 export type Project = {
   id: number;
   name: string;
+  slug: string;
   url: string;
   description: string;
   img: string;

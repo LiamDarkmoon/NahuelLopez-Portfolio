@@ -1,34 +1,39 @@
 import { useState, useEffect } from "react";
+import { navigate } from "astro:transitions/client";
 
-type Lan = "en" | "es";
+type Lan = "es" | "en";
 
 export default function LanSwitch() {
-  const [lan, setLan] = useState<Lan>("es");
+  const [lang, setLang] = useState<Lan>("es");
+  const path = window.location.pathname;
+  const parts = path.split("/").filter(Boolean);
+
+  const currentLang = parts[0] === "en" || parts[0] === "es" ? parts[0] : "es";
+  let navigating = false;
 
   useEffect(() => {
-    const localLan = localStorage.getItem("lang");
-    if (localLan) {
-      setLan(localLan as Lan);
-    }
-  }, []);
+    setLang(currentLang);
+  }, [path]);
 
-  const changeLan = () => {
-    if (lan === "en") {
-      localStorage.setItem("lang", "es");
-      setLan("es");
-    } else {
-      localStorage.setItem("lang", "en");
-      setLan("en");
-    }
+  const handleLang = () => {
+    if (navigating) return;
+    navigating = true;
+
+    const nextLang = currentLang === "en" ? "es" : "en";
+    console.log(nextLang);
+    parts[0] = nextLang;
+    setLang(nextLang);
+
+    navigate("/" + parts.join("/"));
   };
 
   return (
     <button
-      onClick={() => changeLan()}
-      className="w-10  h-10 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-muted dark:text-dark-text-muted transition"
+      onClick={() => handleLang()}
+      className="w-[42px]  h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-muted dark:text-dark-text-muted transition"
       aria-disabled
     >
-      <span className="text-sm font-medium">{lan === "es" ? "Es" : "En"}</span>
+      <span className="text-sm font-medium">{lang}</span>
     </button>
   );
 }

@@ -123,11 +123,11 @@ export default function IconsSprite() {
         </g>
       </symbol>
 
-      <symbol id="icon-less" viewBox="0 0 24 24">
+      <symbol id="icon-code" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+          d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
         />
       </symbol>
 

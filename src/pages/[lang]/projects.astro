@@ -1,0 +1,17 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import CardGroup from "@/components/CardGroup.astro"
+import { getLangPaths } from '@/lib/langs.ts';
+import { dictionaries } from "@/lib/i18n.ts";
+
+export async function getStaticPaths() {
+  return getLangPaths();
+}
+
+const { lang } = Astro.params;
+const lan = dictionaries[lang];
+---
+
+<Layout lan={lan}>
+  <CardGroup transition:name="cards"/>
+</Layout>

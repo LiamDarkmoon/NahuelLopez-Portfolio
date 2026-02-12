@@ -1,23 +1,21 @@
 ---
+import { MENU } from '@/lib/data'
 const { pathname } = Astro.url;
+const { lan } = Astro.props;
+const { lang } = Astro.params;
 
-const menuItems = [
-    {
-        name: "Home",
-        href: "/",
-        active: pathname === "/",
-    },
-    {
-        name: "Projects",
-        href: "/projects",
-        active: pathname === "/projects",
-    },
-    {
-        name: "Resume",
-        href: "/resume",
-        active: pathname === "/resume",
-    },
-];
+const cleanPath = pathname.replace(`/${lang}`, "") || "/";
+const menuItems = MENU.map(item => {
+  const href = `/${lang}/${item.path}`.replace(/\/+$/, ""); // limpia slashes
+  const active = cleanPath === `/${item.path}` || (item.path === "" && cleanPath === "/");
+
+  return {
+    name: lan.side.menu[item.key],
+    href,
+    active,
+  };
+});
+
 ---
 
 <script>
@@ -37,7 +35,7 @@ const menuItems = [
         <div class="w-fit mx-auto mt-5 mb-6">
             <a href="/" >
                 <div class="h-40 w-40 rounded-full bg-gray-300">
-                    <img src="/src/assets/me.jpg" alt="profile photo" class="h-40 w-40 rounded-full">
+                    <img src="/images/me.jpg" alt="profile photo" class="h-40 w-40 rounded-full">
                 </div>
             </a>
         </div>
