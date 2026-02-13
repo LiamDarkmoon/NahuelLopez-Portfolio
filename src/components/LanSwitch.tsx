@@ -20,7 +20,7 @@ export default function LanSwitch() {
     navigating = true;
 
     const nextLang = currentLang === "en" ? "es" : "en";
-    console.log(nextLang);
+
     parts[0] = nextLang;
     setLang(nextLang);
 
@@ -30,7 +30,7 @@ export default function LanSwitch() {
   return (
     <button
       onClick={() => handleLang()}
-      className="w-[42px]  h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-muted dark:text-dark-text-muted transition"
+      className="w-[42px]  h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border transition"
       aria-disabled
     >
       <span className="text-sm font-medium">{lang}</span>

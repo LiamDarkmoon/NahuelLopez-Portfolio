@@ -1,7 +1,6 @@
 ---
 export const prerender = true;
 import Layout from "@/layouts/Layout.astro"
-import CardGroup from "@/components/CardGroup.astro"
 import { getLangPaths } from '@/lib/langs.ts';
 import { dictionaries } from "@/lib/i18n.ts";
 
@@ -14,5 +13,5 @@ const lan = lang ? dictionaries[lang] : dictionaries['es'];
 ---
 
 <Layout lan={lan}>
-  <CardGroup transition:name="cards"/>
+  <h1 class="text-3xl text-center mb-auto">About me</>
 </Layout>

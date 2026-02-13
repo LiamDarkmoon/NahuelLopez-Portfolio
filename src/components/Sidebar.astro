@@ -30,7 +30,7 @@ const menuItems = MENU.map(item => {
 
 <div id="sideBar" class="absolute sm:relative hidden md:grid side z-40 col-span-1 row-start-1 row-span-3 bg-light-bg dark:bg-dark-bg">
 
-    <aside class="flex flex-col min-h-full h-auto w-[300px] px-2 pb-2 pt-14 border-e border-light-border dark:border-dark-border">
+    <aside class="flex flex-col min-h-full h-auto w-screen sm:w-[300px] px-2 pb-2 pt-14 border-e border-light-border dark:border-dark-border">
 
         <div class="w-fit mx-auto mt-5 mb-6">
             <a href="/" >
@@ -62,9 +62,9 @@ const menuItems = MENU.map(item => {
 
 <style>
     .side {
+        height: 100vh;
         max-height: 100vh;
         inset-inline-start: 0px;
-        height: 100%;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         grid-template-rows: repeat(1, minmax(0, 1fr));
         align-items: flex-start;

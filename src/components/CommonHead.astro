@@ -27,7 +27,7 @@ const enUrl = `${origin}/en${basePath}`;
     <meta name="description" content={description} />
     <meta property="og:title" content="Nahuel Lopez — Web & UX Designer" />
     <meta property="og:description" content="Diseño interfaces, experiencias y sistemas digitales con foco en usabilidad y performance." />
-    <meta property="og:image" content="..." />
+    <meta property="og:image" content="/og.png" />
     <meta property="og:url" content="https://Nahuel-lopez.vercel.app" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,17 +44,7 @@ const enUrl = `${origin}/en${basePath}`;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ?? "Nahuel Lopez – Portfolio"}</title>
 
-
 		<ClientRouter/>
-
-    <script>
-      (function () {
-        if (window.location.pathname === '/') {
-          const lang = navigator.language.startsWith('en') ? 'en' : 'es';
-          window.location.replace(`/${lang}`);
-        }
-      })();
-    </script>
 
     <script>
       (function () {

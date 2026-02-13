@@ -35,9 +35,9 @@ export default function ThemeSwitch({
   return (
     <button
       onClick={() => switchTheme()}
-      className="px-3 py-2 md:w-[106px] h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:text-brand transition"
+      className="flex items-center justify-center gap-2 px-3 py-2 md:w-[106px] h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:text-brand transition"
     >
-      <span className="hidden md:block float-start me-2">{children}</span>
+      <span className="hidden md:block">{children}</span>
       {isDark ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -8,16 +8,17 @@ const { lan } = Astro.props
 ---
 
 <header class="absolute w-full md:col-start-2 top-0 flex justify-center items-center bg-light-bg/30 dark:bg-dark-bg/30 md:bg-transparent z-50">
-    <nav class="flex items-center justify-between w-full p-3 bg-transparent">
+    <nav class="flex items-center justify-between sm:justify-end w-full p-3 bg-transparent">
         <Hamburger client:only/>
-        <div class="shrink-0">
-            <a href="/" class="block sm:hidden text-xl">
+        <div class="flex items-center gap-2 shrink-0 sm:hidden">
+            <Icon name='code'/>
+            <a href="/" class="text-xl">
                 Nahuel Lopez
             </a>
         </div>
         <div class="flex items-center gap-2">
-            <LanSwitch client:only/>
-            <ThemeSwitch client:only>{lan.nav.button}</ThemeSwitch>
+            <LanSwitch client:only />
+            <ThemeSwitch client:only >{lan.nav.button}</ThemeSwitch>
         </div>
     </nav>
 </div>

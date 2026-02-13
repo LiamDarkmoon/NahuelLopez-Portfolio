@@ -3,7 +3,7 @@ import Footer from '../components/Footer.astro'
 
 const { lan } = Astro.props
 ---
-<main class="max-w-[100vw] h-[100vh] p-6 pt-24 bg-light-bg dark:bg-dark-bg col-span-1 row-start-1 -row-end-1 overflow-x-hidden overflow-y-scroll hide-scrollbar">
+<main class="md:px-14 max-w-[100vw] h-[100vh] p-6 pt-24 bg-light-bg dark:bg-dark-bg col-span-1 row-start-1 -row-end-1 overflow-x-hidden overflow-y-scroll hide-scrollbar">
   <slot/>
 	<Footer {lan}/>
 </main>

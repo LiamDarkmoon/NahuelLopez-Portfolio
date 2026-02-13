@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	darkMode: "class",
-	theme: {
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  darkMode: "class",
+  theme: {
     extend: {
       colors: {
         // === BRAND ACCENT (Indigo System) ===
         brand: {
-          DEFAULT: "#5B5FE9",   // primary
+          DEFAULT: "#5B5FE9", // primary
           hover: "#6D70FF",
           active: "#3E42B5",
           soft: "#8B8EFF",
@@ -15,17 +15,17 @@ export default {
 
         // === LIGHT MODE SYSTEM ===
         light: {
-          bg: "#F8FAFC",
-          surface: "#FFFFFF",
-          card: "#FFFFFF",
+          bg: "#F5F7FB",
+          surface: "#FDFEFF",
+          card: "#F9FBFF",
 
           text: {
-            primary: "#0F172A",
-            secondary: "#334155",
-            muted: "#64748B",
+            primary: "#0B1220",
+            secondary: "#2E3A4D",
+            muted: "#6B7A90",
           },
 
-          border: "#E2E8F0",
+          border: "#E6EBF2",
         },
 
         // === DARK MODE SYSTEM ===
@@ -45,5 +45,5 @@ export default {
       },
     },
   },
-	plugins: [],
-}
+  plugins: [],
+};
