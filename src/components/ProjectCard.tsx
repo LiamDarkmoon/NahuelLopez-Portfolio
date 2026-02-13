@@ -10,7 +10,7 @@ export default function ProjectCard({
   project: Project;
   lang?: object;
 }) {
-  const cardUrl = `${getLangParams()}/project/${project.slug}`;
+  const cardUrl = `${getLangParams()}/projects/${project.slug}`;
   const handleNavigate = () => {
     navigate(cardUrl);
   };
