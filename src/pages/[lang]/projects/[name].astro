@@ -22,7 +22,6 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const lan = dictionaries[lang];
 const { project } = Astro.props;
-console.log(project.name);
 ---
 
 <Layout lan={lan}>
