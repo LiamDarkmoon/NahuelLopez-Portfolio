@@ -1,4 +1,4 @@
-import { actions } from "astro:actions";
+import { contact } from "@/lib/utils"
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -15,7 +15,7 @@ export default function ContactForm() {
     const form = new FormData(e.currentTarget);
     console.log(form);
 
-    const result = await actions.sendMessage(form);
+    const result = await contact(form);
 
     setLoading(false);
 

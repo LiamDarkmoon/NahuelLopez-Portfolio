@@ -18,3 +18,9 @@ export type Project = {
   img: string;
   stack: Stack;
 };
+
+export type ContactData = {
+  name: string;
+  email: string;
+  message: string;
+};
