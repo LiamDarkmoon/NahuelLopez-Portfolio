@@ -1,7 +1,7 @@
 import { navigate } from "astro:transitions/client";
 import BadgeGroup from "./BadgeGroup";
 import type { Project } from "@/lib/types";
-import { getLangParams } from "@/lib/utils";
+import { buildPath } from "@/lib/utils";
 
 export default function ProjectCard({
   project,
@@ -10,9 +10,8 @@ export default function ProjectCard({
   project: Project;
   lang?: object;
 }) {
-  const cardUrl = `${getLangParams()}/projects/${project.slug}`;
   const handleNavigate = () => {
-    navigate(cardUrl);
+    navigate(buildPath(`projects/${project.slug}`));
   };
 
   return (

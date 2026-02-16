@@ -22,12 +22,25 @@ const enUrl = `${origin}/en${basePath}`;
 ---
 
 <head>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem('theme') || 'dark';
+        const dark = document.documentElement.classList.contains('dark');
+        if (!theme && !dark || theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })();
+    </script>
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta property="og:title" content="Nahuel Lopez — Web & UX Designer" />
     <meta property="og:description" content="Diseño interfaces, experiencias y sistemas digitales con foco en usabilidad y performance." />
-    <meta property="og:image" content="/og.png" />
+    <meta property="og:image" content="https://nahuel-lopez.vercel.app/og.png" />
     <meta property="og:url" content="https://Nahuel-lopez.vercel.app" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -45,13 +58,4 @@ const enUrl = `${origin}/en${basePath}`;
 		<title>{title ?? "Nahuel Lopez – Portfolio"}</title>
 
 		<ClientRouter/>
-
-    <script>
-      (function () {
-        const theme = localStorage.getItem('theme') || 'dark';
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
 </head>

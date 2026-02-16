@@ -1,5 +1,3 @@
-import type { ContactData } from "./types";
-
 export function getLangParams() {
   const path = window.location.pathname;
   const parts = path.split("/").filter(Boolean);
@@ -8,23 +6,31 @@ export function getLangParams() {
   return lang;
 }
 
-export function contact(data: ContactData) {
+export function buildPath(path: string) {
+  const lang = getLangParams();
+  const newPath = `/${lang}/${path}`;
+  return newPath;
+}
 
+export function contact(data: FormData) {
   try {
     const res = fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify(data),
       headers: {
-        "Content-Type": "application/json"
-      }
-    })
+        "Content-Type": "multipart/form-data",
+      },
+      body: data,
+    });
 
-    const ok = res.then((response) => { return response.ok; })
-  
+    const ok = res.then((response) => {
+      return response.ok;
+    });
+
     if (!ok) {
-      console.log("fetch error")
+      return { error: { message: "Resend error" } };
     }
+    return { ok: true };
   } catch (error) {
-    console.log(error)
+    return { error: { message: "Failed to send message" } };
   }
 }

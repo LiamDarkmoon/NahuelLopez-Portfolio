@@ -1,4 +1,4 @@
-import { contact } from "@/lib/utils"
+import { contact } from "@/lib/utils";
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -13,7 +13,7 @@ export default function ContactForm() {
     setSuccess(false);
 
     const form = new FormData(e.currentTarget);
-    console.log(form);
+    console.log("data entries", [...form.entries()]);
 
     const result = await contact(form);
 
@@ -24,9 +24,9 @@ export default function ContactForm() {
       return;
     }
 
-    if (result.data?.ok) {
+    if (result.ok) {
       setSuccess(true);
-      e.currentTarget.reset();
+      e.currentTarget.reset;
     }
   };
 
@@ -47,7 +47,7 @@ export default function ContactForm() {
             name="name"
             type="text"
             placeholder="Michael Jackson"
-            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring active:ring-brand-soft"
+            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring active:ring-brand-soft text-light-text-primary"
           />
         </div>
 
@@ -58,7 +58,7 @@ export default function ContactForm() {
             name="email"
             type="email"
             placeholder="Your-Mail@gmail.dev"
-            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring active:ring-brand-soft"
+            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring active:ring-brand-soft text-light-text-primary"
           />
         </div>
 
@@ -69,7 +69,7 @@ export default function ContactForm() {
             name="message"
             placeholder="Your Message"
             rows={5}
-            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring ring-brand-soft"
+            className="p-2 rounded-md border-light-border dark:border-dark-border active:ring ring-brand-soft text-light-text-primary"
           />
         </div>
 
