@@ -36,4 +36,33 @@ export const projects: Project[] = [
       db: true,
     },
   },
+  {
+    id: 3,
+    name: "El Templo del lobo",
+    slug: "el-templo-del-lobo",
+    url: "https://eltemplodellobo.vercel.app",
+    description:
+      "Plataforma web para la gestión de personajes y combates de dungeons and dragons. Stack: Next.js, React, Tailwind, y vercel postgres.",
+    img: "/images/el-templo-del-lobo.jpg",
+    stack: {
+      next: true,
+      react: true,
+      tailwind: true,
+      db: true,
+    },
+  },
+  {
+    id: 4,
+    name: "N&V",
+    slug: "n-and-v",
+    url: "https://nahuelyviqui.vercel.app",
+    description:
+      "Invitacion de boda interactiva con diseño personalizado, animaciones y cuenta regresiva. Stack: Astro, React, Tailwind.",
+    img: "/images/n-and-v.jpg",
+    stack: {
+      astro: true,
+      react: true,
+      tailwind: true,
+    },
+  },
 ];

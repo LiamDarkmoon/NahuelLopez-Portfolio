@@ -22,4 +22,10 @@ export default {
     description: "Construido con Astro, React y TailwindCSS",
     copy: "© 2026 NL — Diseño digital y sistemas",
   },
+  about: {
+    title: "Sobre mí",
+    text: "Soy diseñador web y UX con mentalidad de ingeniero. No construyo páginas: diseño sistemas. Me especializo en crear productos digitales claros, escalables y pensados para personas reales, no para métricas vacías. Trabajo en la intersección entre diseño y desarrollo, donde la experiencia de usuario, la arquitectura y el rendimiento se convierten en una sola cosa. Me obsesiona la claridad, la estructura y la simplicidad bien pensada. Diseñar bien es resolver problemas. Construir bien es hacer que no vuelvan.",
+    p: "Podés ver mi trayectoria completa acá →",
+    link: "Descargar CV",
+  },
 };

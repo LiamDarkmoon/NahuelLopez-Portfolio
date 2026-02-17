@@ -21,9 +21,13 @@ export default function ProjectCard({
       onClick={() => handleNavigate()}
     >
       <img
-        src={project?.img ? project.img : "/src/assets/astro.svg"}
+        src={
+          project?.img
+            ? project.img
+            : "https://via.placeholder.com/300x100?text=Project+Image"
+        }
         alt="project image"
-        className="h-[100px] w-[300px] min-w-[200px] border rounded border-light-border dark:border-dark-border"
+        className="h-[100px] w-[200px] min-w-[200px] border rounded border-light-border dark:border-dark-border"
       ></img>
       <div className="relative">
         <h3 className="flex flex-wrap items-center text-2xl font-semibold mb-2">

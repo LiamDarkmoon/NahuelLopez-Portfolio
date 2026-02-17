@@ -28,13 +28,13 @@ const { project } = Astro.props;
   <section class="w-full flex flex-col gap-6">
 
     <h1 class="text-3xl font-bold pb-3 flex flex-wrap gap-3 items-centerjustify-between mb-6 border-b border-light-border dark:border-dark-border">
-      {project.name + " </>"}
+      {project.name}
       <BadgeGroup { ...project.stack }/>
     </h1>  
 
     <article class="flex flex-col gap-3">
       <p>{project.description}<a class="text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> Click here to visit {project.name}</a></p>
-      <p >Check out the <a class="text-brand hover:text-brand-hover active:text-brand-active" href="/projects">all projects</a> page to see more projects.</p>
+      <p >Check out the <a class="text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>PROJECTS</a> page to see more projects.</p>
       <div class="flex gap-4 py-6">
         <img src={project.img} alt={project.name} />
 

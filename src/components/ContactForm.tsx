@@ -1,33 +1,48 @@
 import { contact } from "@/lib/utils";
 import { useState } from "react";
 
+type Errors =
+  | {
+      name?: string[];
+      email?: string[];
+      message?: string[];
+    }
+  | string;
+
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Errors | null>(null);
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setError(null);
+    setErrors(null);
     setSuccess(false);
 
-    const form = new FormData(e.currentTarget);
-    console.log("data entries", [...form.entries()]);
+    const form = e.currentTarget;
+    const formData = new FormData(e.currentTarget);
 
-    const result = await contact(form);
+    const result = await contact(formData);
 
     setLoading(false);
 
     if (result.error) {
-      setError(result.error.message);
+      setErrors(result.error);
       return;
     }
 
     if (result.ok) {
       setSuccess(true);
-      e.currentTarget.reset;
+      form.reset();
     }
+    setTimeout(() => {
+      setSuccess(false);
+    }, 30000);
+  };
+
+  const cleanError = () => {
+    setErrors(null);
   };
 
   return (
@@ -42,7 +57,11 @@ export default function ContactForm() {
       >
         <div className="flex flex-col gap-2 w-full">
           <label htmlFor="Name">Name</label>
+          <p className="text-red-500 text-xs">
+            {errors && typeof errors === "object" ? errors.name : null}
+          </p>
           <input
+            onClick={cleanError}
             id="Name"
             name="name"
             type="text"
@@ -53,7 +72,11 @@ export default function ContactForm() {
 
         <div className="flex flex-col gap-2 w-full">
           <label htmlFor="Email">Email</label>
+          <p className="text-red-500 text-xs">
+            {errors && typeof errors === "object" ? errors.email : null}
+          </p>
           <input
+            onClick={cleanError}
             id="Email"
             name="email"
             type="email"
@@ -64,7 +87,11 @@ export default function ContactForm() {
 
         <div className="flex flex-col gap-2 w-full">
           <label htmlFor="Message">Message</label>
+          <p className="text-red-500 text-xs">
+            {errors && typeof errors === "object" ? errors.message : null}
+          </p>
           <textarea
+            onClick={cleanError}
             id="Message"
             name="message"
             placeholder="Your Message"
@@ -73,20 +100,25 @@ export default function ContactForm() {
           />
         </div>
 
-        <button
-          disabled={loading}
-          type="submit"
-          className="w-full rounded-lg h-12 px-6 py-3 text-dark-text-primary bg-brand hover:bg-brand-hover active:bg-brand-active"
-        >
-          {loading ? "Sending..." : "Send"}
-        </button>
-
-        <p className="h-5 text-red-500 text-sm">
-          {error && "Ups something PUFF"}
-        </p>
-        <p className="h-5 text-green-500 text-sm">
-          {success && "Message sent 🚀"}
-        </p>
+        <div className="w-full text-center">
+          <button
+            disabled={loading}
+            type="submit"
+            className="w-full rounded-lg h-12 mb-4 px-6 py-3 text-dark-text-primary bg-brand hover:bg-brand-hover active:bg-brand-active"
+          >
+            {loading ? "Sending..." : "Send"}
+          </button>
+          {(errors && (
+            <p className="h-5 text-red-500 text-sm">
+              {errors && typeof errors === "string" ? errors : null}
+            </p>
+          )) ||
+            (success && (
+              <p className="h-5 text-green-500 text-sm">
+                {success && "Message sent 🚀"}
+              </p>
+            ))}
+        </div>
       </form>
     </section>
   );

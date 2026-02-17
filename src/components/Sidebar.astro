@@ -6,8 +6,11 @@ const { lang } = Astro.params;
 
 const cleanPath = pathname.replace(`/${lang}`, "") || "/";
 const menuItems = MENU.map(item => {
+const basePath = `/${item.path}`.replace(/\/+$/, "") || "/";
   const href = `/${lang}/${item.path}`.replace(/\/+$/, ""); // limpia slashes
-  const active = cleanPath === `/${item.path}` || (item.path === "" && cleanPath === "/");
+  const active =
+    cleanPath === basePath ||
+    cleanPath.startsWith(basePath + "/");
 
   return {
     name: lan.side.menu[item.key],
@@ -28,9 +31,9 @@ const menuItems = MENU.map(item => {
     if (menu) menu.addEventListener("click", hideMenu);
 </script>
 
-<div id="sideBar" class="absolute md:relative hidden md:grid side z-40 col-span-1 row-start-1 row-span-3 bg-light-bg dark:bg-dark-bg">
+<div id="sideBar" class="absolute md:relative hidden md:grid side z-40 col-span-1 row-start-1 row-span-3 bg-light-surface dark:bg-dark-surface">
 
-    <aside class="flex flex-col h-screen w-screen sm:w-[300px] px-2 pb-2 pt-14 border-e border-light-border dark:border-dark-border">
+    <aside class="flex flex-col h-[100dvh] w-screen sm:w-[300px] px-2 pb-2 pt-14 border-e border-light-border dark:border-dark-border">
 
         <div class="w-fit mx-auto mt-5 mb-6">
             <a href="/" >
@@ -63,7 +66,7 @@ const menuItems = MENU.map(item => {
 <style>
     .side {
         
-        max-height: 100vh;
+        max-height: 100dvh;
         inset-inline-start: 0px;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         grid-template-rows: repeat(1, minmax(0, 1fr));

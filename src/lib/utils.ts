@@ -12,23 +12,18 @@ export function buildPath(path: string) {
   return newPath;
 }
 
-export function contact(data: FormData) {
+export async function contact(data: FormData) {
   try {
-    const res = fetch("/api/contact", {
+    const res = await fetch("/api/contact.json", {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
       body: data,
     });
 
-    const ok = res.then((response) => {
-      return response.ok;
-    });
-
-    if (!ok) {
-      return { error: { message: "Resend error" } };
+    if (!res.ok) {
+      const err = await res.json();
+      return { error: err?.errors || "Server error" };
     }
+
     return { ok: true };
   } catch (error) {
     return { error: { message: "Failed to send message" } };
