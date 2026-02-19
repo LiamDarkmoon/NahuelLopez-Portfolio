@@ -1,5 +1,5 @@
-import es from "@/i18n/es";
-import en from "@/i18n/en";
+import { es } from "@/i18n/es";
+import { en } from "@/i18n/en";
 
 export const dictionaries = {
   es,
@@ -7,3 +7,4 @@ export const dictionaries = {
 } as const;
 
 export type Lang = keyof typeof dictionaries;
+export type Dictionaries = typeof dictionaries;

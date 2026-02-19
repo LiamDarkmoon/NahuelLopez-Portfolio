@@ -42,6 +42,20 @@ export default {
 
           border: "#1F2937",
         },
+
+        error: {
+          bg: "#2A0F14",
+          border: "#5A1A24",
+          text: "#F87171",
+          icon: "#E11D48",
+        },
+
+        success: {
+          bg: "#0F1F1A",
+          border: "#1C3D32",
+          text: "#6EE7B7",
+          icon: "#10B981",
+        },
       },
     },
   },

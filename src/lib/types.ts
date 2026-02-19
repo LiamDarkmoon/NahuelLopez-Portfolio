@@ -16,6 +16,7 @@ export type Project = {
   url: string;
   description: string;
   img: string;
+  smImg: string;
   stack: Stack;
 };
 
@@ -24,3 +25,59 @@ export type ContactData = {
   email: string;
   message: string;
 };
+
+export type DictionarySchema = {
+  nav: {
+    button: string,
+  },
+  hero: {
+    top: string,
+    title: string,
+    subtitle: string,
+    description: string,
+    button: string,
+  },
+  side: {
+    menu: {
+      home: string,
+      projects: string,
+      about: string,
+    },
+  },
+  footer: {
+    name: string,
+    description: string,
+    copy: string,
+  },
+  about: {
+    title: string,
+    text:  string,
+    p: string,
+    link: string,
+  },
+  projects: {
+    title: string,
+    heroTittle: string,
+    text: string,
+    link: string,
+    linkP1: string,
+    linkP2: string,
+    data: Project[],
+  },
+  form: {
+    title: string,
+    fields: {
+      name: string,
+      email: string,
+      message: string,
+      button: string,
+    },
+    errors: {
+      name: string,
+      email: string,
+      message: string,
+    },
+    error: string,
+    success: string,
+  },
+}

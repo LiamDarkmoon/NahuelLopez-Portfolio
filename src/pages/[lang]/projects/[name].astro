@@ -2,21 +2,24 @@
 import Layout from '@/layouts/Layout.astro';
 import BadgeGroup from '@/components/BadgeGroup';
 import { LANGS } from '@/lib/langs';
-import { projects } from '@/lib/data';
-import { dictionaries } from "@/lib/i18n.ts";
+import type { Project } from '@/lib/types';
+import { dictionaries } from "@/lib/i18n";
 
 export function getStaticPaths() {
-  return LANGS.flatMap((lang) =>
-    projects.map((project) => ({
+  return LANGS.flatMap((lang) => {
+    const lan = dictionaries[lang];
+
+    return lan.projects.data.map((project: Project) => ({
       params: {
         lang,
         name: project.slug,
       },
       props: {
         project,
+        lang,
       },
-    }))
-  );
+    }));
+  });
 }
 
 const { lang } = Astro.params;
@@ -30,14 +33,14 @@ const { project } = Astro.props;
     <h1 class="text-3xl font-bold pb-3 flex flex-wrap gap-3 items-centerjustify-between mb-6 border-b border-light-border dark:border-dark-border">
       {project.name}
       <BadgeGroup { ...project.stack }/>
-    </h1>  
+    </h1>
 
     <article class="flex flex-col gap-3">
-      <p>{project.description}<a class="text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> Click here to visit {project.name}</a></p>
-      <p >Check out the <a class="text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>PROJECTS</a> page to see more projects.</p>
-      <div class="flex gap-4 py-6">
+      <p>{project.description}<a class="text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> {lan.projects.link} {project.name}</a></p>
+      <p >{lan.projects.linkP1} <a class="text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>{ lan.projects.title }</a> {lan.projects.linkP2}</p>
+      <div class="flex flex-col items-center gap-4 py-6">
         <img src={project.img} alt={project.name} />
-
+        <img src={project.smImg} alt={project.name} />
       </div>
     </article>
 

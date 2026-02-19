@@ -1,8 +1,14 @@
 ---
 import CardGroup from './CardGroup.astro'
 import ContactForm from './ContactForm'
+import type { Lang, Dictionaries } from '@/lib/i18n'
 
-const { lan } = Astro.props
+interface Props {
+	lan: Dictionaries[Lang]
+}
+
+const { lan } = Astro.props as Props;
+const form = lan["form"]
 ---
 
 <section class="w-full">
@@ -19,4 +25,4 @@ const { lan } = Astro.props
 	</article>
 </section>
 <CardGroup hero {lan}/>
-<ContactForm client:only/>
+<ContactForm client:only lan={form}/>

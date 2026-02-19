@@ -4,6 +4,7 @@ import LanSwitch from '@/components/LanSwitch.tsx'
 import Hamburger from '@/components/Hamburger.tsx'
 import Icon from '@/components/Icon.tsx'
 
+const { lang } = Astro.params
 const { lan } = Astro.props
 ---
 
@@ -12,7 +13,7 @@ const { lan } = Astro.props
         <Hamburger client:only/>
         <div class="flex items-center gap-2 shrink-0 sm:hidden">
             <Icon name='code'/>
-            <a href="/" class="text-xl">
+            <a href={`/${lang}`} class="text-xl">
                 Nahuel Lopez
             </a>
         </div>
