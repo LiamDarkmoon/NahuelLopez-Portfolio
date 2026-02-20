@@ -30,7 +30,7 @@ export default function LanSwitch() {
   return (
     <button
       onClick={() => handleLang()}
-      className="w-[42px]  h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border transition"
+      className="w-10.5  h-10.5 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border transition-all cursor-pointer"
       aria-disabled
     >
       <span className="text-sm font-medium">{lang}</span>

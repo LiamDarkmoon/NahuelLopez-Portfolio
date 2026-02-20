@@ -38,9 +38,9 @@ const { project } = Astro.props;
     <article class="flex flex-col gap-3">
       <p>{project.description}<a class="text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> {lan.projects.link} {project.name}</a></p>
       <p >{lan.projects.linkP1} <a class="text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>{ lan.projects.title }</a> {lan.projects.linkP2}</p>
-      <div class="flex flex-col items-center gap-4 py-6">
-        <img src={project.img} alt={project.name} />
-        <img src={project.smImg} alt={project.name} />
+      <div class="flex flex-row md:flex-col items-center gap-5 py-6 h-[50dvh] overflow-x-scroll hide-scrollbar">
+        <img class="h-full object-fill" src={project.img} alt={project.name} />
+        <img class="h-full object-fill" src={project.smImg} alt={project.name} />
       </div>
     </article>
 

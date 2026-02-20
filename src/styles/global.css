@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@import "tailwind-animations";
+
+/* Theme variants */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant glitch (&:where(.glitch, .glitch *));
+
+@theme {
+  --color-brand: #5b5fe9;
+  --color-brand-hover: #6d70ff;
+  --color-brand-active: #3e42b5;
+  --color-brand-soft: #8b8eff;
+
+  --color-light-bg: #e5e7eb;
+  --color-light-surface: #dfe0f1;
+  --color-light-card: #dddeeb;
+  --color-light-border: #bebed7;
+  --color-light-shadow: rgba(15, 25, 60, 0.08);
+  --color-light-text-primary: #0b1220;
+  --color-light-text-secondary: #2e3a4d;
+  --color-light-text-muted: #6b7a90;
+
+  --color-dark-bg: #0b0f1a;
+  --color-dark-surface: #121826;
+  --color-dark-card: #161c2d;
+  --color-dark-border: #1f2937;
+  --color-dark-text-primary: #e5e7eb;
+  --color-dark-text-secondary: #cbd5e1;
+  --color-dark-text-muted: #94a3b8;
+
+  --color-error-bg: #2a0f14;
+  --color-error-border: #5a1a24;
+  --color-error-text: #f87171;
+  --color-error-icon: #e11d48;
+
+  --color-success-bg: #0f1f1a;
+  --color-success-border: #1c3d32;
+  --color-success-text: #6ee7b7;
+  --color-success-icon: #10b981;
+}

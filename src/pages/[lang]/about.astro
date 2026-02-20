@@ -12,14 +12,17 @@ const lan = lang ? dictionaries[lang] : dictionaries['es'];
 ---
 
 <Layout lan={lan}>
-  <h1 class="text-3xl font-bold mb-4">{lan.about.title}</h1>
-  <div class="h-full">
-    <p class="mb-4 text-regular">{lan.about.text}</p>
-    <p class="mb-4 text-regular">
-      {lan.about.p}
-      <a href={`/cv-Porfolio-${lang}.pdf`} download class="underline text-brand hover:text-brand-hover active:text-brand-active">
-        {lan.about.link}
-      </a>
-    </p>
-  </div>
+  <section class="h-full overflow-scroll hide-scrollbar">
+    <h1 class="text-3xl font-bold mb-4">{lan.about.title}</h1>
+    <article class="flex flex-col gap-4">
+      <p class="text-regular">{lan.about.text}</p>
+      <img src="/images/me.jpg" alt="About me" class="w-full h-63 object-cover rounded-lg shadow-md mb-4" />
+      <p class="text-regular">
+        {lan.about.p}
+        <a href={`/cv-Porfolio-${lang}.pdf`} download class="underline text-brand hover:text-brand-hover active:text-brand-active">
+          {lan.about.link}
+        </a>
+      </p>
+    </article>
+  </section>
 </Layout>

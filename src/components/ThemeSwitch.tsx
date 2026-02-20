@@ -28,14 +28,15 @@ export default function ThemeSwitch({
     }
   }, [isDark]);
 
-  const switchTheme = () => {
+  const switchTheme = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.classList.toggle("animate-flip-x");
     setIsDark((prev) => !prev);
   };
 
   return (
     <button
-      onClick={() => switchTheme()}
-      className="flex items-center justify-center gap-2 px-3 py-2 md:w-[106px] h-[42px] rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary hover:text-brand transition"
+      onClick={(e) => switchTheme(e)}
+      className="flex items-center justify-center gap-2 px-3 py-2 md:w-26.5 h-10.5 rounded-lg bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary animate-duration-faster cursor-pointer"
     >
       <span className="hidden md:block">{children}</span>
       {isDark ? (

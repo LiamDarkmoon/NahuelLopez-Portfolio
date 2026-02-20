@@ -13,7 +13,7 @@ export default function Hamburger() {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="size-10 p-2 rounded-md border border-light-border bg-light-card dark:border-dark-border dark:bg-dark-card md:hidden"
+      className="size-10 p-2 rounded-md border border-light-border bg-light-card dark:border-dark-border dark:bg-dark-card md:hidden cursor-pointer"
       onClick={() => hideMenu()}
     >
       <path
