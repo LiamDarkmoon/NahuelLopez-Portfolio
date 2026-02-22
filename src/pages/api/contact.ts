@@ -3,8 +3,6 @@ import { Resend } from "resend";
 import { z } from "astro/zod";
 import sanitizeHtml from "sanitize-html";
 
-export const prerender = false;
-
 const apiKey = import.meta.env.RESEND_API_KEY;
 console.log(apiKey);
 
