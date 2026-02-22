@@ -1,0 +1,33 @@
+---
+---
+
+<div class="content-wrapper">
+  <slot/>
+</div>
+
+<style>
+	.content-wrapper {
+    grid-column-start: 1 ;
+    height: 100%;
+    width: 100%;
+		padding: 6rem 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+		-ms-overflow-style: none; 
+		scrollbar-width: none;
+  }
+
+	.content-wrapper::-webkit-scrollbar {
+		display: none;
+	}
+
+  @media (width >= 1024px) {
+		.content-wrapper{
+			grid-column-start: 2;
+			padding-inline: 3.5rem;
+		}
+	}  
+</style>

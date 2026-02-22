@@ -26,8 +26,8 @@ export const es = {
   },
   about: {
     title: "Sobre mí",
-    text: "Soy diseñador web y UX con mentalidad de ingeniero. No construyo páginas: diseño sistemas. Me especializo en crear productos digitales claros, escalables y pensados para personas reales, no para métricas vacías. Trabajo en la intersección entre diseño y desarrollo, donde la experiencia de usuario, la arquitectura y el rendimiento se convierten en una sola cosa. Me obsesiona la claridad, la estructura y la simplicidad bien pensada. Diseñar bien es resolver problemas. Construir bien es hacer que no vuelvan.",
-    p: "Podés ver mi trayectoria completa acá →",
+    text: "Soy diseñador web y UX con mentalidad de ingeniero. No construyo páginas: diseño sistemas. Me especializo en crear productos digitales claros, escalables, pensados para personas reales. Trabajo justo entre el diseño y el desarrollo, donde la experiencia de usuario, la arquitectura y el rendimiento se convierten en uno. Me obsesiona la claridad, la estructura y la simplicidad. Diseñar bien es resolver problemas. Construir bien es hacer que no vuelvan.",
+    p: "Podés ver mi cv acá →",
     link: "Descargar CV",
   },
   projects: {
@@ -60,7 +60,7 @@ export const es = {
         slug: "cloudboard-api",
         url: "https://api-cloudboard.vercel.app",
         description:
-          "API modular orientada a servicios con autenticación JWT, refresh tokens, arquitectura por capas y diseño escalable. Pensada como backend base reutilizable para múltiples productos. Stack: FastAPI, Pydantic, Supabase, JWT.",
+          "API modular orientada a servicios con autenticación JWT, refresh tokens, arquitectura por capas y diseño escalable. Pensada como backend base reutilizable para múltiples productos. Stack: FastAPI, Pydantic, Supabase.",
         img: "/images/cloud-api.jpg",
         smImg: "/images/cloud-api-sm.jpg",
         stack: {

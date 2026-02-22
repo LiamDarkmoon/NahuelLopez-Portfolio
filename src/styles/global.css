@@ -6,6 +6,9 @@
 @custom-variant glitch (&:where(.glitch, .glitch *));
 
 @theme {
+  --font-body: "Manrope", "system-ui", "sans-serif";
+  --font-display: "Space Grotesk", "system-ui", "sans-serif";
+
   --color-brand: #5b5fe9;
   --color-brand-hover: #6d70ff;
   --color-brand-active: #3e42b5;

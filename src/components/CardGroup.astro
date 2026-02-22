@@ -5,7 +5,7 @@ import type { Project } from '../lib/types.ts'
 const { hero, lan } = Astro.props
 ---
 
-<section class="relative flex flex-col gap-6 pb-10" transition:name="cards">
+<section class="" transition:name="cards">
 	<h2 class="text-3xl font-bold pb-3 border-b border-light-border dark:border-dark-border">{ hero ? lan.projects.heroTittle : lan.projects.title }</h2>
 	{ !hero && <p class="">{lan.projects.text}</p> }
 	{ lan.projects.data.map((p: Project) => (

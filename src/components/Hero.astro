@@ -11,12 +11,12 @@ const { lan } = Astro.props as Props;
 const form = lan["form"]
 ---
 
-<section class="w-full">
+<section class="">
 	<article class="pb-12">
 		<div class="flex flex-col mb-4">
-			<h3 class="text-xl font-bold text-start text-opacity-60">{lan.hero.top}</h3>
-			<h1 class="text-5xl font-bold text-start mb-2">{lan.hero.title}</h1>
-			<h2 class="text-3xl font-bold text-start text-opacity-75">{lan.hero.subtitle}</h2>
+			<h3 class="text-xl font-bold text-start text-light-text-muted dark:text-dark-text-muted mb-2">{lan.hero.top}</h3>
+			<h1 class="text-5xl font-display font-bold text-start mb-2">{lan.hero.title}</h1>
+			<h2 class="text-3xl font-display font-bold text-start text-light-text-secondary dark:text-dark-text-secondary">{lan.hero.subtitle}</h2>
 		</div>
 		<p class="py-2 wrap-break text-secundary-text">{lan.hero.description}</p>
 		<div class="py-2 mt-8 flex items-center">

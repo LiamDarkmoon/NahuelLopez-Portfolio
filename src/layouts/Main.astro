@@ -1,9 +1,33 @@
 ---
+import Navbar from "../components/Navbar.astro";
+import Sidebar from "../components/Sidebar.astro";
+import Page from "./Page.astro";
 import Footer from '../components/Footer.astro'
 
 const { lan } = Astro.props
 ---
-<main class="relative md:px-14 max-w-[100vw] h-[100vh] p-6 pt-24 bg-light-bg dark:bg-dark-bg col-span-1 row-start-1 -row-end-1 overflow-x-hidden overflow-y-scroll hide-scrollbar">
-  <slot/>
-	<Footer {lan}/>
+<main class="bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary">
+  <Navbar {lan}/>
+  <Sidebar {lan}/>
+	<Page>
+		<slot/>
+		<Footer {lan}/>
+	</Page>
 </main>
+
+<style>
+	main {
+		position: relative;
+		display: grid;
+		grid-template-columns: 300px 1fr;
+		grid-template-rows: 1fr;
+		width: 100vw;
+		height: 100dvh;
+	}
+
+	@media (max-width: 1024px) {
+		main {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

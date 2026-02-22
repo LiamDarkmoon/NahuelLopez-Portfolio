@@ -28,19 +28,19 @@ const { project } = Astro.props;
 ---
 
 <Layout lan={lan}>
-  <section class="w-full flex flex-col gap-6">
+  <section class="">
 
     <h1 class="text-3xl font-bold pb-3 flex flex-wrap gap-3 items-centerjustify-between mb-6 border-b border-light-border dark:border-dark-border">
       {project.name}
       <BadgeGroup { ...project.stack }/>
     </h1>
 
-    <article class="flex flex-col gap-3">
-      <p>{project.description}<a class="text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> {lan.projects.link} {project.name}</a></p>
-      <p >{lan.projects.linkP1} <a class="text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>{ lan.projects.title }</a> {lan.projects.linkP2}</p>
-      <div class="flex flex-row md:flex-col items-center gap-5 py-6 h-[50dvh] overflow-x-scroll hide-scrollbar">
-        <img class="h-full object-fill" src={project.img} alt={project.name} />
-        <img class="h-full object-fill" src={project.smImg} alt={project.name} />
+    <article class="flex flex-col gap-5">
+      <p>{project.description}<a class="underline text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> {lan.projects.link} {project.name}</a></p>
+      <p >{lan.projects.linkP1} <a class="underline text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>{ lan.projects.title }</a> {lan.projects.linkP2}</p>
+      <div class="flex items-center justify-center gap-6 py-6 h-90 overflow-x-scroll hide-scrollbar rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card">
+        <img class="h-full object-fill hover:shadow shadow-dark-bg hover:scale-105" src={project.img} alt={project.name} />
+        <img class="h-full object-fill hover:shadow shadow-dark-bg hover:scale-105" src={project.smImg} alt={project.name} />
       </div>
     </article>
 

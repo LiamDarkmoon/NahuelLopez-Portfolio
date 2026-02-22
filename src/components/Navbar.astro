@@ -2,18 +2,18 @@
 import ThemeSwitch from '@/components/ThemeSwitch.tsx'
 import LanSwitch from '@/components/LanSwitch.tsx'
 import Hamburger from '@/components/Hamburger.tsx'
-import Icon from '@/components/Icon.tsx'
+import Logo from '@/components/Logo.tsx'
 
 const { lang } = Astro.params
 const { lan } = Astro.props
 ---
 
-<header class="absolute w-full md:col-start-2 top-0 flex justify-center items-center bg-light-bg/30 dark:bg-dark-bg/30 md:bg-transparent z-50">
-    <nav class="flex items-center justify-between md:justify-end w-full p-3 bg-transparent">
+<header class="absolute w-full lg:col-start-2 top-0 flex justify-center items-center bg-light-bg/50 dark:bg-dark-bg/30 md:bg-transparent z-50">
+    <nav class="flex items-center justify-between lg:justify-end w-full p-3 bg-transparent">
         <Hamburger client:only/>
         <div class="flex items-center gap-2 shrink-0 sm:hidden">
-            <Icon name='code'/>
-            <a href={`/${lang}`} class="text-xl">
+            <Logo/>
+            <a href={`/${lang}`} class="text-xl font-display font-semibold">
                 Nahuel Lopez
             </a>
         </div>
