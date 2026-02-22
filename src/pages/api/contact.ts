@@ -5,7 +5,14 @@ import sanitizeHtml from "sanitize-html";
 
 export const prerender = false;
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const apiKey = import.meta.env.RESEND_API_KEY;
+console.log(apiKey);
+
+if (!apiKey) {
+  console.error("Missing key");
+}
+
+const resend = new Resend(apiKey);
 
 const ContactSchema = z.object({
   name: z.string().min(1, "Name is required").max(40, "Name is too long"),
@@ -36,10 +43,10 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  const { message } = validation.data;
+  const { email, message } = validation.data;
 
   const { data: adminMail, error: adminError } = await resend.emails.send({
-    from: "Portfolio Contact <onboarding@resend.dev>",
+    from: `${email} Portfolio Contact <onboarding@resend.dev>`,
     to: ["nahuel.lopez.r@gmail.com"],
     subject: "Nuevo mensaje del portfolio",
     html: `<p>${message}</p>`,
@@ -51,17 +58,5 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  /*   const { error: userError } = await resend.emails.send({
-    from: "Portfolio Nahuel Lopez <onboarding@resend.dev>",
-    to: [`${data.email}`],
-    subject: "Mensaje recibido",
-    html: `<p>Tu mensaje fue recibido. Te responderé a la brevedad.</p>`,
-  });
-
-  if (userError) {
-    console.log("Error sending confirmation email:", userError);
-    return new Response(JSON.stringify({ ok: false }), { status: 502 });
-  }
- */
   return new Response(JSON.stringify({ ok: true }), { status: 200 });
 };

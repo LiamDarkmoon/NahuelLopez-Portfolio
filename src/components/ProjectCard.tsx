@@ -29,7 +29,7 @@ export default function ProjectCard({
     <article
       ref={animation.ref}
       key={project.id}
-      className="-right-1/2 group flex flex-col md:flex-row items-center gap-4 h-full md:h-37.5 p-4 rounded-lg bg-light-card border border-light-border dark:bg-dark-card dark:border-dark-border cursor-pointer hover:shadow-sm shadow-light-border dark:shadow-dark-border hover:scale-105 transition-all duration-300 ease-in-out active:scale-95 timeline-view animate-fade-in animate-range-gradual animate-duration-1000 animate-iteration-count-infinite"
+      className="-right-1/2 group flex flex-col md:flex-row items-center gap-4 md:h-37.5 p-4 rounded-lg bg-light-card border border-light-border dark:bg-dark-card dark:border-dark-border cursor-pointer hover:shadow-sm shadow-light-border dark:shadow-dark-border hover:scale-105 transition-all duration-300 ease-in-out active:scale-95 timeline-view animate-fade-in animate-range-gradual animate-duration-1000 animate-iteration-count-infinite"
       onClick={() => handleNavigate()}
       onMouseEnter={() => animation.trigger("animate-fade-in")}
     >
