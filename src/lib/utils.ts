@@ -14,7 +14,7 @@ export function buildPath(path: string) {
 
 export async function contact(data: FormData) {
   try {
-    const res = await fetch("/api/contact", {
+    const res = await fetch("/api/contact.json", {
       method: "POST",
       body: data,
     });
