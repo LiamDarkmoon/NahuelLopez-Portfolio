@@ -4,7 +4,7 @@ export default function Logo() {
       className="size-8"
       viewBox="0 0 24 24"
       transform="rotate(45)"
-      stroke="#e5e7eb"
+      fill="#e5e7eb"
     >
       <g strokeWidth="0"></g>
       <g strokeLinecap="round" strokeLinejoin="round"></g>
