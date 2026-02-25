@@ -10,7 +10,7 @@ export const en = {
     subtitle: "Frontend Developer and Ux/Ui designer",
     description:
       "This Portfolio is built with Astro using React and TailwindCSS, come take a look and see some of my latest projects and ideas. Hope you enjoy and apretiate it",
-    button: "Let's get in touch",
+    button: "Let's Contact",
   },
   side: {
     menu: {
@@ -44,7 +44,7 @@ export const en = {
         slug: "cloudboard",
         url: "https://cloudboard-api.vercel.app",
         description:
-          "Plataforma web fullstack para gestión de eventos y contenido en tiempo real. Arquitectura API-first con autenticación, roles y sistema de eventos. Stack: Astro, React, Tailwind.",
+          "Fullstack web platform for real-time event and content management. API-first architecture with authentication, roles, and event-driven systems. Stack: Astro, React, Tailwind.",
         img: "/images/cloudboard.jpg",
         smImg: "/images/cloudboard-sm.jpg",
         stack: {
@@ -53,6 +53,34 @@ export const en = {
           tailwind: true,
           typescript: true,
         },
+        page: {
+          hero: {
+            title: "Cloudboard",
+            tagline: "Fullstack real-time event management platform",
+          },
+          overview:
+            "Cloudboard is a real-time event and content management platform built on an API-first architecture, focused on scalability, modularity, and separation of concerns.",
+          problem:
+            "Most event platforms mix UI logic, business logic, and data layers into monolithic systems that are hard to scale and maintain.",
+          solution:
+            "A decoupled architecture was designed, with an independent backend, authentication system, roles, and an event-oriented model.",
+          architecture: {
+            frontend: "Astro + React",
+            styling: "Tailwind",
+            backend: "API-first",
+            auth: "Token-based authentication system",
+            structure: "Decoupled modular architecture",
+          },
+          technicalFocus: [
+            "Separation of concerns",
+            "API-first architecture",
+            "Modular systems",
+            "Scalability",
+            "Service reusability",
+          ],
+          vision:
+            "Cloudboard is not just a product — it’s a platform foundation for building multiple real-time systems.",
+        },
       },
       {
         id: 2,
@@ -60,7 +88,7 @@ export const en = {
         slug: "cloudboard-api",
         url: "https://api-cloudboard.vercel.app",
         description:
-          "API modular orientada a servicios con autenticación JWT, refresh tokens, arquitectura por capas y diseño escalable. Pensada como backend base reutilizable para múltiples productos. Stack: FastAPI, Pydantic, Supabase, JWT.",
+          "Service-oriented modular API with JWT authentication, refresh tokens, layered architecture, and scalable design. Built as a reusable backend foundation for multiple products. Stack: FastAPI, Pydantic, Supabase, JWT.",
         img: "/images/cloud-api.jpg",
         smImg: "/images/cloud-api-sm.jpg",
         stack: {
@@ -68,14 +96,41 @@ export const en = {
           fastapi: true,
           db: true,
         },
+        page: {
+          hero: {
+            title: "Cloudboard API",
+            tagline: "Reusable service-oriented backend core",
+          },
+          overview:
+            "Cloudboard API is a service-oriented backend designed as a reusable core for multiple products.",
+          problem:
+            "Many backends are tightly coupled to a single frontend, limiting reuse and scalability.",
+          solution:
+            "A modular API was designed with JWT authentication, refresh tokens, layered architecture, and domain separation.",
+          architecture: {
+            framework: "FastAPI",
+            validation: "Pydantic",
+            database: "Supabase",
+            auth: "JWT + Refresh Tokens",
+            structure: "Layered architecture",
+          },
+          technicalFocus: [
+            "API as a product",
+            "Backend as infrastructure",
+            "Frontend as a client",
+            "Decoupled domain logic",
+          ],
+          vision:
+            "A reusable backend core capable of powering multiple platforms, products, and interfaces.",
+        },
       },
       {
         id: 3,
-        name: "El Templo del lobo",
+        name: "El Templo del Lobo",
         slug: "el-templo-del-lobo",
         url: "https://eltemplodellobo.vercel.app",
         description:
-          "Plataforma web para la gestión de personajes y combates de dungeons and dragons. Stack: Next.js, React, Tailwind, y vercel postgres.",
+          "Web platform for managing characters and combat systems for Dungeons & Dragons campaigns. Stack: Next.js, React, Tailwind, Vercel Postgres.",
         img: "/images/el-templo-del-lobo.jpg",
         smImg: "/images/el-templo-del-lobo-sm.jpg",
         stack: {
@@ -84,6 +139,32 @@ export const en = {
           tailwind: true,
           db: true,
         },
+        page: {
+          hero: {
+            title: "El Templo del Lobo",
+            tagline: "Digital platform for tabletop campaigns",
+          },
+          overview:
+            "Web platform for managing campaigns, characters, and combat systems for Dungeons & Dragons.",
+          problem:
+            "Campaigns usually rely on scattered tools like PDFs, notes, physical sheets, and disconnected systems.",
+          solution:
+            "A centralized system for character management, combat tracking, and campaign persistence.",
+          architecture: {
+            frontend: "Next.js + React",
+            styling: "Tailwind",
+            database: "Vercel Postgres",
+            model: "Relational schema",
+          },
+          technicalFocus: [
+            "UX for Dungeon Masters",
+            "Campaign persistence",
+            "Structured data management",
+            "Digital tabletop experience",
+          ],
+          vision:
+            "A digital companion for tabletop storytelling without killing the magic of imagination.",
+        },
       },
       {
         id: 4,
@@ -91,13 +172,31 @@ export const en = {
         slug: "n-and-v",
         url: "https://nahuelyviqui.vercel.app",
         description:
-          "Invitacion de boda interactiva con diseño personalizado, animaciones y cuenta regresiva. Stack: Astro, React, Tailwind.",
+          "Interactive wedding invitation with custom design, animations, and countdown experience. Stack: Astro, React, Tailwind.",
         img: "/images/n-and-v.jpg",
         smImg: "/images/n-and-v-sm.jpg",
         stack: {
           astro: true,
           react: true,
           tailwind: true,
+        },
+        page: {
+          hero: {
+            title: "N&V",
+            tagline: "Interactive digital wedding invitation",
+          },
+          overview:
+            "Digital wedding invitation designed as an interactive experience, not a static page.",
+          solution:
+            "The invitation as an emotional experience, not just information.",
+          technicalFocus: [
+            "Animations",
+            "Countdown system",
+            "Custom design",
+            "Dynamic interactions",
+            "Responsive experience",
+          ],
+          vision: "Turning an invitation into a memorable digital experience.",
         },
       },
     ],

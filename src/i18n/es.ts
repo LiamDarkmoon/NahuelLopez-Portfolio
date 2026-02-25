@@ -53,6 +53,35 @@ export const es = {
           tailwind: true,
           typescript: true,
         },
+        page: {
+          hero: {
+            title: "Cloudboard",
+            tagline:
+              "Plataforma fullstack de gestión de eventos en tiempo real",
+          },
+          overview:
+            "Cloudboard es una plataforma de gestión de eventos y contenido en tiempo real construida sobre una arquitectura API-first, enfocada en escalabilidad, modularidad y separación de responsabilidades.",
+          problem:
+            "La mayoría de las plataformas de eventos mezclan lógica de UI, negocio y datos en sistemas monolíticos difíciles de escalar y mantener.",
+          solution:
+            "Se diseñó una arquitectura desacoplada, con un backend independiente, sistema de autenticación, roles y un modelo orientado a eventos.",
+          architecture: {
+            frontend: "Astro + React",
+            styling: "Tailwind",
+            backend: "API-first",
+            auth: "Sistema de autenticación por tokens",
+            structure: "Arquitectura modular desacoplada",
+          },
+          technicalFocus: [
+            "Separación de responsabilidades",
+            "Arquitectura API-first",
+            "Sistemas modulares",
+            "Escalabilidad",
+            "Reutilización de servicios",
+          ],
+          vision:
+            "Cloudboard no es solo un producto, es una base de plataforma para construir múltiples sistemas en tiempo real.",
+        },
       },
       {
         id: 2,
@@ -67,6 +96,33 @@ export const es = {
           python: true,
           fastapi: true,
           db: true,
+        },
+        page: {
+          hero: {
+            title: "Cloudboard API",
+            tagline: "Backend modular reutilizable orientado a servicios",
+          },
+          overview:
+            "Cloudboard API es un backend orientado a servicios, diseñado como núcleo reutilizable para múltiples productos.",
+          problem:
+            "Muchos backends están acoplados a un único frontend, lo que limita su reutilización y escalabilidad.",
+          solution:
+            "Se diseñó una API modular con autenticación JWT, refresh tokens, arquitectura por capas y separación de dominios.",
+          architecture: {
+            framework: "FastAPI",
+            validation: "Pydantic",
+            database: "Supabase",
+            auth: "JWT + Refresh Tokens",
+            structure: "Arquitectura por capas",
+          },
+          technicalFocus: [
+            "API como producto",
+            "Backend como infraestructura",
+            "Frontend como cliente",
+            "Dominio desacoplado",
+          ],
+          vision:
+            "Un núcleo backend reutilizable capaz de alimentar múltiples plataformas, productos e interfaces.",
         },
       },
       {
@@ -84,6 +140,32 @@ export const es = {
           tailwind: true,
           db: true,
         },
+        page: {
+          hero: {
+            title: "El Templo del Lobo",
+            tagline: "Plataforma digital para campañas de rol",
+          },
+          overview:
+            "Plataforma web para la gestión de campañas, personajes y sistemas de combate de Dungeons & Dragons.",
+          problem:
+            "Las campañas suelen depender de herramientas dispersas como PDFs, notas, hojas físicas y sistemas no integrados.",
+          solution:
+            "Un sistema centralizado para gestión de personajes, combates y campañas con persistencia de datos.",
+          architecture: {
+            frontend: "Next.js + React",
+            styling: "Tailwind",
+            database: "Vercel Postgres",
+            model: "Esquema relacional",
+          },
+          technicalFocus: [
+            "UX para Dungeon Masters",
+            "Persistencia de campañas",
+            "Gestión estructurada de datos",
+            "Experiencia digital de rol",
+          ],
+          vision:
+            "Un compañero digital para la narrativa tabletop sin perder la magia del juego.",
+        },
       },
       {
         id: 4,
@@ -98,6 +180,25 @@ export const es = {
           astro: true,
           react: true,
           tailwind: true,
+        },
+        page: {
+          hero: {
+            title: "N&V",
+            tagline: "Invitación digital interactiva",
+          },
+          overview:
+            "Invitación de boda digital diseñada como una experiencia interactiva, no como una página estática.",
+          concept:
+            "La invitación como experiencia emocional, no como simple información.",
+          technicalFocus: [
+            "Animaciones",
+            "Cuenta regresiva",
+            "Diseño personalizado",
+            "Interacciones dinámicas",
+            "Experiencia responsive",
+          ],
+          vision:
+            "Transformar una invitación en una experiencia digital memorable.",
         },
       },
     ],

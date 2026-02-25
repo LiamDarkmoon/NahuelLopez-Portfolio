@@ -9,7 +9,7 @@ export default function Icon({ name, className }: IconProps) {
       className={className}
       width="24px"
       height="24px"
-      fill="#5b5fe9"
+      stroke="currentColor"
       aria-hidden="true"
     >
       <use href={`#icon-${name}`} />

@@ -13,7 +13,7 @@ const { lang, lan } = Astro.props
 <!doctype html>
 <html lang={lang}>
 	<CommonHead/>
-	<body class="bg-light-bg dark:bg-dark-bg font-body">
+	<body class="bg-light-bg dark:bg-dark-bg">
 		<IconsSprite/>
 		<Main {lan}>
 			<slot />
@@ -36,7 +36,7 @@ const { lang, lan } = Astro.props
 		flex-direction: column;
 		gap: 1.25rem;
 	}
-	section, h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, h5, h6 {
 		font-family: var(--font-display);
 	}
 </style>
@@ -48,6 +48,7 @@ const { lang, lan } = Astro.props
 		margin:0
 	}
 	body {
+		font-family: var(--font-body);
 		overflow:hidden;
 	}
 </style>

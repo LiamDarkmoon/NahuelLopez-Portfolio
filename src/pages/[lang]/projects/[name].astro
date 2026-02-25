@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import BadgeGroup from '@/components/BadgeGroup';
+import Icon from '@/components/Icon';
 import { LANGS } from '@/lib/langs';
 import type { Project } from '@/lib/types';
 import { dictionaries } from "@/lib/i18n";
@@ -30,14 +31,50 @@ const { project } = Astro.props;
 <Layout lan={lan}>
   <section class="">
 
-    <h1 class="text-3xl font-bold pb-3 flex flex-wrap gap-3 items-centerjustify-between mb-6 border-b border-light-border dark:border-dark-border">
-      {project.name}
-      <BadgeGroup { ...project.stack }/>
-    </h1>
+    <div class="flex flex-col items-center justify-between gap-3 mb-2">
+      <div class="w-full flex justify-between items-center pb-3 border-b border-light-border dark:border-dark-border">
+        <h1 class="text-3xl font-bold">
+          {project.page?.hero.title || project.name}
+          <a class="float-right" href={project.url} target="_blank"><Icon name="eye"/></a>
+        </h1>
+        <BadgeGroup { ...project.stack }/>
+      </div>
+      <p class="w-full text-sm text-light-text-secondary dark:text-dark-text-secondary italic">{project.page?.hero.tagline}</p>
+    </div>
 
-    <article class="flex flex-col gap-5">
-      <p>{project.description}<a class="underline text-brand hover:text-brand-hover active:text-brand-active" href={project.url} target="_blank"> {lan.projects.link} {project.name}</a></p>
-      <p >{lan.projects.linkP1} <a class="underline text-brand hover:text-brand-hover active:text-brand-active" href={`/${lang}/projects`}>{ lan.projects.title }</a> {lan.projects.linkP2}</p>
+    <article class="flex flex-col gap-4">
+      <p class="py-10">{project.page?.overview}</p>
+      
+      <div class="flex flex-col gap-2 pb-10">
+        <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Technical Focus</h2>
+        {project.page?.technicalFocus?.map((feature) => (
+          <div class="flex items-center gap-3">
+            <div class="size-5 rounded-full bg-brand"></div>
+            <p>{feature}</p>
+          </div>
+        ))}
+      </div>
+    </article>
+
+    <div class="flex flex-col md:flex-row gap-6 items-center md:border-t md:border-b md:border-light-border md:dark:border-dark-border md:text-center md:py-10">
+      <article class="flex flex-col gap-4 md:w-1/2">
+       <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Problem</h2>
+        <p>{project.page?.problem}</p>
+      </article>
+  
+      <article class="flex flex-col gap-4 md:w-1/2">
+        <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Solution</h2>
+        <p>{project.page?.solution}</p>
+      </article>
+    </div>
+    
+    <article class="flex flex-col gap-4 py-10">
+      <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Vision</h2>
+      <p>{project.page?.vision}</p>
+    </article>
+
+    <article class="flex flex-col gap-4">
+
       <div class="flex items-center justify-center gap-6 py-6 h-90 overflow-x-scroll hide-scrollbar rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card">
         <img class="h-full object-fill hover:shadow shadow-dark-bg hover:scale-105" src={project.img} alt={project.name} />
         <img class="h-full object-fill hover:shadow shadow-dark-bg hover:scale-105" src={project.smImg} alt={project.name} />
