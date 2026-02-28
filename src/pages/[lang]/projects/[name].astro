@@ -42,8 +42,8 @@ const { project } = Astro.props;
       <p class="w-full text-sm text-light-text-secondary dark:text-dark-text-secondary italic">{project.page?.hero.tagline}</p>
     </div>
 
-    <article class="flex flex-col gap-4">
-      <p class="py-10">{project.page?.overview}</p>
+    <article class="min-h-[50vh] flex flex-col gap-4">
+      <p class="py-10 w-3/4 text-center self-center">{project.page?.overview}</p>
       
       <div class="flex flex-col gap-2 pb-10">
         <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Technical Focus</h2>
@@ -56,24 +56,25 @@ const { project } = Astro.props;
       </div>
     </article>
 
-    <div class="flex flex-col md:flex-row gap-6 items-center md:border-t md:border-b md:border-light-border md:dark:border-dark-border md:text-center md:py-10">
-      <article class="flex flex-col gap-4 md:w-1/2">
-       <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Problem</h2>
-        <p>{project.page?.problem}</p>
+    <div class="min-h-[50vh] flex flex-col md:flex-row gap-6 items-start justify-between md:border-t md:border-b md:border-light-border md:dark:border-dark-border md:text-center md:py-10">
+      <article class="flex flex-col items-center gap-4 md:w-[30%]">
+       <h2 class="w-full text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Problem</h2>
+        <p class="w-4/5">{project.page?.problem}</p>
       </article>
   
-      <article class="flex flex-col gap-4 md:w-1/2">
-        <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Solution</h2>
-        <p>{project.page?.solution}</p>
+      <article class="flex flex-col items-center gap-4 md:w-[30%]">
+        <h2 class="w-full text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Solution</h2>
+        <p class="w-4/5">{project.page?.solution}</p>
+      </article>
+
+      <article class="flex flex-col items-center gap-4 md:w-[30%]">
+        <h2 class="w-full text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Vision</h2>
+        <p class="w-4/5">{project.page?.vision}</p>
       </article>
     </div>
     
-    <article class="flex flex-col gap-4 py-10">
-      <h2 class="text-2xl font-semibold pb-2 border-b border-light-border dark:border-dark-border">Vision</h2>
-      <p>{project.page?.vision}</p>
-    </article>
 
-    <article class="flex flex-col gap-4">
+    <article class="min-h-[50vh] flex flex-col gap-4">
 
       <div class="flex items-center justify-center gap-6 py-6 h-90 overflow-x-scroll hide-scrollbar rounded-lg border border-light-border dark:border-dark-border bg-light-card dark:bg-dark-card">
         <img class="h-full object-fill hover:shadow shadow-dark-bg hover:scale-105" src={project.img} alt={project.name} />
